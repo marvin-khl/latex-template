@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{konfiguration.tex}
+\addbibresource{quellen.bib}
+\input{abkuerzungsverzeichnis.tex}
+
+\begin{document}
+    \onehalfspacing % 1.5 Zeilenabstand für das gesamte Dokument
+
+    % Titelblatt
+    \input{titel_seite.tex}
+    \newpage
+
+    % Inhaltsverzeichnis
+    \tableofcontents
+    \newpage
+
+    % Abkürzungsverzeichnis & Abbildungsverzeichnis
+    \printglossary[type=\acronymtype, title=Abkürzungsverzeichnis]
+    \listoffigures
+    \newpage
+
+    \addcontentsline{toc}{section}{Abkürzungsverzeichnis \& Abbildungsverzeichnis}
+
+    % Hauptkapitel
+    \input{./1_einleitung/1_1_einleitung_motivation.tex}
+
+
+    \newpage
+    % Literaturverzeichnis
+    \addcontentsline{toc}{section}{Literaturverzeichnis}
+    \printbibliography
+
+    % Anhang
+    \appendix
+    \renewcommand{\thesection}{A\arabic{section}} 
+
+    % Ehrenwörtliche Erklärung
+    \input{ehrenwörtliche_erklärung}
+
+\end{document}

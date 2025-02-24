@@ -1,0 +1,81 @@
+% -----------------------------
+% Pakete für Sprache und Schrift
+% -----------------------------
+\usepackage[T1]{fontenc}  % Korrekte Trennung und Umlaute
+\usepackage[ngerman]{babel}  % Deutsche Spracheinstellung (neue Rechtschreibung)
+\usepackage{setspace}  % Zeilenabstand
+\usepackage{geometry}  % Seitenränder einstellen
+\geometry{
+  left=4cm,
+  right=2cm,
+  bottom=2cm,
+  top=4cm,
+}
+
+% -----------------------------
+% Pakete für Literaturverweise
+% -----------------------------
+\usepackage[backend=biber,
+  maxcitenames=3,
+  maxbibnames=999,
+  mergedate=false,
+  date=iso,
+  seconds=true,
+  urldate=iso,
+  innamebeforetitle,
+  dashed=false,
+  autocite=footnote,
+  doi=false,
+  useprefix=true,
+  citestyle=authoryear,
+  url=true,
+  style=ext-authoryear-ibid
+]{biblatex}
+\addbibresource{quellen.bib}  % Pfad zur Literatur-Datenbank
+
+% -----------------------------
+% Pakete für Tabellen und Grafiken
+% -----------------------------
+\usepackage{graphicx}  % Bilder einbinden
+\usepackage{tabularx}  % Tabellen mit variabler Spaltenbreite
+\usepackage{longtable}  % Mehrseitige Tabellen
+\usepackage{float}  % Positionierung von Tabellen und Bildern
+\usepackage{pdfpages}
+
+% -----------------------------
+% Pakete für Fußnoten und Zitate
+% -----------------------------
+\usepackage{scrextend}  % Erweiterte Fußnoten
+\deffootnote[1em]{1em}{1em}{\textsuperscript{\thefootnotemark}\,}  % Fußnoteneinstellungen
+\newcommand{\vglfootcite}[2][]{\footnote{Vgl. \cite{#2}, S. #1}}
+\newcommand{\vglfootciteInternet}[2]{\footcite[Vgl.][(abgerufen am: #2)]{#1}}
+
+% -----------------------------
+% Pakete für Abkürzungen und Verzeichnisse
+% -----------------------------
+\usepackage[acronym]{glossaries} % 'acronym' für Abkürzungen
+
+% -----------------------------
+% Einstellungen für Bibliographie
+% -----------------------------
+\DefineBibliographyStrings{german}{
+  andothers = {{et\,al\adddot}},  % Darstellung von "et al."
+}
+\DeclareFieldFormat{url}{\newline\url{#1}}  % URLs formatieren
+
+% -----------------------------
+% Meta-Informationen zur Arbeit
+% -----------------------------
+\newcommand{\myAutor}{Max Mustermann}
+\newcommand{\myAdresse}{Musterstraße}
+\newcommand{\myTitel}{Visualisierung öffentlicher Geo-Daten von Windkraftanlagen\\ Konzeption und Entwicklung einer Next.js-Anwendung}
+\newcommand{\myBetreuer}{Prof. Dr. Max Mustermann}
+\newcommand{\myLehrveranstaltung}{Web Technologie}
+\newcommand{\myMatrikelNr}{123456}
+\newcommand{\myOrt}{Münster}
+\newcommand{\myAbgabeDatum}{23.02.2025}
+\newcommand{\mySemesterZahl}{5}
+\newcommand{\myHochschulName}{FOM Hochschule für Oekonomie \& Management}
+\newcommand{\myHochschulStandort}{Münster}
+\newcommand{\myStudiengang}{Wirtschaftsinformatik}
+\newcommand{\myThesisArt}{Seminararbeit}
